@@ -1,0 +1,11 @@
+<launch>
+
+    <node pkg="pub_sub_int" type="Publisher_int_1" name="pub_int_1">
+        
+    </node>
+
+    <node pkg="pub_sub_int" type="Subscriber_int_1" name="sub_int_1">
+        
+    </node>
+
+</launch>

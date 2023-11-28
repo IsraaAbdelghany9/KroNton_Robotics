@@ -1,0 +1,7 @@
+<launch>
+
+    <node pkg="pub_sub_int" type="Subscriber_int_1" name="sub">
+        
+    </node>
+
+</launch>

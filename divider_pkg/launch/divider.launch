@@ -1,0 +1,12 @@
+<launch>
+
+                <!-- integer publisher node -->
+    <node pkg="pub_sub_int" type="Publisher_int_1" name="pub_int_1">
+        
+    </node>
+                <!-- divider publisher & subscriber node -->
+    <node pkg="divider_pkg" type="Divider_node" name="divider">
+        
+    </node>
+
+</launch>

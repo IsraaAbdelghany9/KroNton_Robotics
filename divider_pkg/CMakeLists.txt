@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(pub_sub_int)
+project(divider_pkg)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -9,7 +9,6 @@ project(pub_sub_int)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  rospy
   std_msgs
 )
 
@@ -70,7 +69,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
+#   std_msgs
 # )
 
 ################################################
@@ -104,8 +103,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES pub_sub_int
-#  CATKIN_DEPENDS roscpp rospy std_megs
+#  LIBRARIES divider_pkg
+#  CATKIN_DEPENDS roscpp std_msgs
 #  DEPENDS system_lib
 )
 
@@ -122,7 +121,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/pub_sub_int.cpp
+#   src/${PROJECT_NAME}/divider_pkg.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -133,11 +132,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(Publisher_String_node src/pub_1.cpp)
-add_executable(Subscriber_String_node src/sub_1.cpp)
-
-add_executable(Publisher_int_1 src/pub_int_1.cpp)
-add_executable(Subscriber_int_1 src/sub_int_1.cpp)
+add_executable(Divider_node src/divider.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -150,20 +145,9 @@ add_executable(Subscriber_int_1 src/sub_int_1.cpp)
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(Publisher_String_node 
-  ${catkin_LIBRARIES} 
+target_link_libraries(Divider_node
+  ${catkin_LIBRARIES}
 )
-target_link_libraries(Subscriber_String_node 
-  ${catkin_LIBRARIES} 
-)
-
-target_link_libraries(Publisher_int_1 
-  ${catkin_LIBRARIES} 
-)
-target_link_libraries(Subscriber_int_1 
-  ${catkin_LIBRARIES} 
-)
-
 
 #############
 ## Install ##
@@ -212,7 +196,7 @@ target_link_libraries(Subscriber_int_1
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_pub_sub_int.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_divider_pkg.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
