@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/israa/KroNton_Robotics/devel -DCMAKE_INSTALL_PREFIX=/home/israa/KroNton_Robotics/install -G Unix Makefiles
