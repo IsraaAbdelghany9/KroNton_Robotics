@@ -17,6 +17,7 @@ int main(int argc, char** argv)
 
   while (ros::ok())
   {
+    
     vel_pub.publish(msg);
     ros::spinOnce();
     rate.sleep();
