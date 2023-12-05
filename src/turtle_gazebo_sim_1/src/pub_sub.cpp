@@ -7,14 +7,17 @@ float front_distance;
 float right_distance;
 float left_distance;
 
+signed int i;
+
 geometry_msgs::Twist cmd_vel_msg;
 
 void laserScanCallback(const sensor_msgs::LaserScan::ConstPtr& msg) {
-    front_distance = msg->ranges[0];  // Distance in front of the robot
-    right_distance = msg->ranges[90];  // Distance at the right side of the robot
-    left_distance = msg->ranges[-90];  // Distance at the left side of the robot
 
-    
+    front_distance = msg->ranges[0];  // Distance in front of the robot
+    // right_distance = msg->ranges[90];  // Distance at the right side of the robot
+    // left_distance = msg->ranges[-90];  // Distance at the left side of the robot
+
+
 
     if (front_distance > 2.0) {
         // No obstacle in front, move forward
@@ -23,26 +26,36 @@ void laserScanCallback(const sensor_msgs::LaserScan::ConstPtr& msg) {
     } 
     else if(front_distance < 2.0)
     {
-        // Obstacle in front, avoid it
-        if (right_distance > 2 && left_distance < 2) 
+        for (i=0;i<=45;i++)
         {
-            // Obstacle is closer on the right side, turn left
-            cmd_vel_msg.linear.x = 0.0;  // Set linear velocity 
-            cmd_vel_msg.angular.z = 0.5;  // Set angular velocity for left turn
-            
-        } 
-        else if (right_distance < 2 && left_distance > 2)
-        {
-            // Obstacle is closer on the left side, turn right
-            cmd_vel_msg.linear.x = 0.0;  // Set linear velocity 
-            cmd_vel_msg.angular.z = -0.5;  // Set angular velocity for right turn
+            right_distance = msg->ranges[i];  // Distance at the right side of the robot
+
+            if (right_distance > 2.0)
+            {
+
+                cmd_vel_msg.linear.x = 0.0;  // Set linear velocity 
+                cmd_vel_msg.angular.z = -0.5;  // Set angular velocity for right turn
+                cmd_vel_pub.publish(cmd_vel_msg);
+                break;
+            }
+
         }
-        else 
+        for (i=0;i>=-45;i--)
         {
-            // Obstacle is close on both sides, move backwards
-            cmd_vel_msg.linear.x = -0.2;  // Set linear velocity for backward movement
-            cmd_vel_msg.angular.z = 0.0;  // Set angular velocity for turning
+            left_distance = msg->ranges[i];  // Distance at the right side of the robot
+
+            if (left_distance > 2.0)
+            {
+
+                // Obstacle is closer on the right side, turn left
+                cmd_vel_msg.linear.x = 0.0;  // Set linear velocity 
+                cmd_vel_msg.angular.z = 0.5;  // Set angular velocity for left turn
+                cmd_vel_pub.publish(cmd_vel_msg);
+                break;
+            }
+
         }
+        
     }
 
     cmd_vel_pub.publish(cmd_vel_msg);
