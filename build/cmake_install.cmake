@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -131,6 +131,12 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/israa/KroNton_Robotics/build/gtest/cmake_install.cmake")
+  include("/home/israa/KroNton_Robotics/build/Ass_1/cmake_install.cmake")
+  include("/home/israa/KroNton_Robotics/build/custom_msg_pkg/cmake_install.cmake")
+  include("/home/israa/KroNton_Robotics/build/divider_pkg/cmake_install.cmake")
+  include("/home/israa/KroNton_Robotics/build/pub_sub_int/cmake_install.cmake")
+  include("/home/israa/KroNton_Robotics/build/topic_subscriber_pkg/cmake_install.cmake")
+  include("/home/israa/KroNton_Robotics/build/turtle_gazebo_sim_1/cmake_install.cmake")
 
 endif()
 

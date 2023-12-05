@@ -7,7 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/israa/KroNton_Robotics/devel:$CMAKE_PREFIX_PATH"
 export PWD='/home/israa/KroNton_Robotics/build'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/israa/KroNton_Robotics/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/israa/KroNton_Robotics/src:$ROS_PACKAGE_PATH"

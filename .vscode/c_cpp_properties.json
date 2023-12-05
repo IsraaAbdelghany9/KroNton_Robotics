@@ -1,0 +1,26 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/opt/ros/noetic/include/**",
+        "/home/israa/KroNton_Robotics/src/Ass_1/include/**",
+        "/home/israa/KroNton_Robotics/src/custom_msg_pkg/include/**",
+        "/home/israa/KroNton_Robotics/src/divider_pkg/include/**",
+        "/home/israa/KroNton_Robotics/src/pub_sub_int/include/**",
+        "/home/israa/KroNton_Robotics/src/topic_subscriber_pkg/include/**",
+        "/home/israa/KroNton_Robotics/src/turtle_gazebo_sim_1/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

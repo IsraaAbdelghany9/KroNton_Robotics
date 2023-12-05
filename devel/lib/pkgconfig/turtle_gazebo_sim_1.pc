@@ -1,0 +1,8 @@
+prefix=/home/israa/KroNton_Robotics/devel
+
+Name: turtle_gazebo_sim_1
+Description: Description of turtle_gazebo_sim_1
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

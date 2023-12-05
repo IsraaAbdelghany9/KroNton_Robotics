@@ -1,0 +1,8 @@
+prefix=/home/israa/KroNton_Robotics/devel
+
+Name: Ass_1
+Description: Description of Ass_1
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

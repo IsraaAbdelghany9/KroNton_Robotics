@@ -1,0 +1,8 @@
+prefix=/home/israa/KroNton_Robotics/devel
+
+Name: pub_sub_int
+Description: Description of pub_sub_int
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
