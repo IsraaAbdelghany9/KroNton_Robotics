@@ -7,8 +7,10 @@ float front_distance;
 float right_distance;
 float left_distance;
 
-float front_distance_pos_3;
-float front_distance_neg_3;
+float front_distance_pos_45;
+float front_distance_neg_315;
+float front_distance_pos_20;
+float front_distance_neg_340;
 geometry_msgs::Twist cmd_vel_msg;
 
 signed int i;
@@ -16,15 +18,16 @@ signed int i;
 void laserScanCallback(const sensor_msgs::LaserScan::ConstPtr& msg) {
 
     front_distance = msg->ranges[0];  // Distance in front of the robot
-    front_distance_pos_3 = msg->ranges[45];  // Distance in front_right of the robot
-    front_distance_neg_3 = msg->ranges[315];  // Distance in front_left of the robot
-
+    front_distance_pos_45 = msg->ranges[45];  // Distance in front_right of the robot
+    front_distance_neg_315 = msg->ranges[315];  // Distance in front_left of the robot
+    front_distance_pos_20 = msg->ranges[20];
+    front_distance_neg_340 = msg->ranges[340];
     // ROS_INFO("front_distance_pos_3 = %f , front_distance_neg_3 =%f , front_distance =%f",& msg->ranges[3] ,& front_distance_neg_3 ,& front_distance);
     
     //&& front_distance_pos_3 > 0.5 && front_distance_neg_3 > 0.5 
     i = 0;
 
-    if ((front_distance > 1.5) && (front_distance_pos_3 > 0.3) && (front_distance_neg_3 > 0.3 )  )
+    if ((front_distance > 1.5) && (front_distance_pos_45 > 0.5) && (front_distance_neg_315 > 0.5 ) && (front_distance_pos_20 > 0.5 ) && (front_distance_neg_340 > 0.5 ) )
     {
         // No obstacle in front, move forward
         cmd_vel_msg.linear.x = 0.2;  // Set linear velocity for forward movement
@@ -81,7 +84,7 @@ void laserScanCallback(const sensor_msgs::LaserScan::ConstPtr& msg) {
 int main(int argc, char** argv) {
 
     //node initializatiton 
-    ros::init(argc, argv, "robot_controller");
+    ros::init(argc, argv, "robot_controller_house");
 
     //node handle
     ros::NodeHandle handle;

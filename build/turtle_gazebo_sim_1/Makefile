@@ -80,38 +80,16 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target test
+test/fast: test
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -124,16 +102,38 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : test/fast
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,19 +168,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-turtle_gazebo_sim_1/CMakeFiles/robot_controller.dir/rule:
-	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 turtle_gazebo_sim_1/CMakeFiles/robot_controller.dir/rule
-.PHONY : turtle_gazebo_sim_1/CMakeFiles/robot_controller.dir/rule
+turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-robot_controller: turtle_gazebo_sim_1/CMakeFiles/robot_controller.dir/rule
+geometry_msgs_generate_messages_py: turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 
-.PHONY : robot_controller
+.PHONY : geometry_msgs_generate_messages_py
 
 # fast build rule for target.
-robot_controller/fast:
-	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/robot_controller.dir/build.make turtle_gazebo_sim_1/CMakeFiles/robot_controller.dir/build
-.PHONY : robot_controller/fast
+geometry_msgs_generate_messages_py/fast:
+	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
+	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
@@ -198,34 +213,19 @@ geometry_msgs_generate_messages_nodejs/fast:
 .PHONY : geometry_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+turtle_gazebo_sim_1/CMakeFiles/robot_controller_world.dir/rule:
+	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 turtle_gazebo_sim_1/CMakeFiles/robot_controller_world.dir/rule
+.PHONY : turtle_gazebo_sim_1/CMakeFiles/robot_controller_world.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_py: turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+robot_controller_world: turtle_gazebo_sim_1/CMakeFiles/robot_controller_world.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_py
+.PHONY : robot_controller_world
 
 # fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
+robot_controller_world/fast:
+	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/robot_controller_world.dir/build.make turtle_gazebo_sim_1/CMakeFiles/robot_controller_world.dir/build
+.PHONY : robot_controller_world/fast
 
 # Convenience name for target.
 turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
@@ -243,46 +243,88 @@ geometry_msgs_generate_messages_eus/fast:
 .PHONY : geometry_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+turtle_gazebo_sim_1/CMakeFiles/robot_controller_house.dir/rule:
+	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 turtle_gazebo_sim_1/CMakeFiles/robot_controller_house.dir/rule
+.PHONY : turtle_gazebo_sim_1/CMakeFiles/robot_controller_house.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_cpp: turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+robot_controller_house: turtle_gazebo_sim_1/CMakeFiles/robot_controller_house.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_cpp
+.PHONY : robot_controller_house
 
 # fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
+robot_controller_house/fast:
+	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/robot_controller_house.dir/build.make turtle_gazebo_sim_1/CMakeFiles/robot_controller_house.dir/build
+.PHONY : robot_controller_house/fast
 
-src/pub_sub.o: src/pub_sub.cpp.o
+# Convenience name for target.
+turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f CMakeFiles/Makefile2 turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : src/pub_sub.o
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+src/pub_sub_house.o: src/pub_sub_house.cpp.o
+
+.PHONY : src/pub_sub_house.o
 
 # target to build an object file
-src/pub_sub.cpp.o:
-	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/robot_controller.dir/build.make turtle_gazebo_sim_1/CMakeFiles/robot_controller.dir/src/pub_sub.cpp.o
-.PHONY : src/pub_sub.cpp.o
+src/pub_sub_house.cpp.o:
+	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/robot_controller_house.dir/build.make turtle_gazebo_sim_1/CMakeFiles/robot_controller_house.dir/src/pub_sub_house.cpp.o
+.PHONY : src/pub_sub_house.cpp.o
 
-src/pub_sub.i: src/pub_sub.cpp.i
+src/pub_sub_house.i: src/pub_sub_house.cpp.i
 
-.PHONY : src/pub_sub.i
+.PHONY : src/pub_sub_house.i
 
 # target to preprocess a source file
-src/pub_sub.cpp.i:
-	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/robot_controller.dir/build.make turtle_gazebo_sim_1/CMakeFiles/robot_controller.dir/src/pub_sub.cpp.i
-.PHONY : src/pub_sub.cpp.i
+src/pub_sub_house.cpp.i:
+	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/robot_controller_house.dir/build.make turtle_gazebo_sim_1/CMakeFiles/robot_controller_house.dir/src/pub_sub_house.cpp.i
+.PHONY : src/pub_sub_house.cpp.i
 
-src/pub_sub.s: src/pub_sub.cpp.s
+src/pub_sub_house.s: src/pub_sub_house.cpp.s
 
-.PHONY : src/pub_sub.s
+.PHONY : src/pub_sub_house.s
 
 # target to generate assembly for a file
-src/pub_sub.cpp.s:
-	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/robot_controller.dir/build.make turtle_gazebo_sim_1/CMakeFiles/robot_controller.dir/src/pub_sub.cpp.s
-.PHONY : src/pub_sub.cpp.s
+src/pub_sub_house.cpp.s:
+	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/robot_controller_house.dir/build.make turtle_gazebo_sim_1/CMakeFiles/robot_controller_house.dir/src/pub_sub_house.cpp.s
+.PHONY : src/pub_sub_house.cpp.s
+
+src/pub_sub_world.o: src/pub_sub_world.cpp.o
+
+.PHONY : src/pub_sub_world.o
+
+# target to build an object file
+src/pub_sub_world.cpp.o:
+	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/robot_controller_world.dir/build.make turtle_gazebo_sim_1/CMakeFiles/robot_controller_world.dir/src/pub_sub_world.cpp.o
+.PHONY : src/pub_sub_world.cpp.o
+
+src/pub_sub_world.i: src/pub_sub_world.cpp.i
+
+.PHONY : src/pub_sub_world.i
+
+# target to preprocess a source file
+src/pub_sub_world.cpp.i:
+	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/robot_controller_world.dir/build.make turtle_gazebo_sim_1/CMakeFiles/robot_controller_world.dir/src/pub_sub_world.cpp.i
+.PHONY : src/pub_sub_world.cpp.i
+
+src/pub_sub_world.s: src/pub_sub_world.cpp.s
+
+.PHONY : src/pub_sub_world.s
+
+# target to generate assembly for a file
+src/pub_sub_world.cpp.s:
+	cd /home/israa/KroNton_Robotics/build && $(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/robot_controller_world.dir/build.make turtle_gazebo_sim_1/CMakeFiles/robot_controller_world.dir/src/pub_sub_world.cpp.s
+.PHONY : src/pub_sub_world.cpp.s
 
 # Help Target
 help:
@@ -291,21 +333,25 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... install"
-	@echo "... list_install_components"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... test"
-	@echo "... robot_controller"
-	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... src/pub_sub.o"
-	@echo "... src/pub_sub.i"
-	@echo "... src/pub_sub.s"
+	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... robot_controller_world"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... install/local"
+	@echo "... robot_controller_house"
+	@echo "... test"
+	@echo "... edit_cache"
+	@echo "... rebuild_cache"
+	@echo "... list_install_components"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... install"
+	@echo "... src/pub_sub_house.o"
+	@echo "... src/pub_sub_house.i"
+	@echo "... src/pub_sub_house.s"
+	@echo "... src/pub_sub_world.o"
+	@echo "... src/pub_sub_world.i"
+	@echo "... src/pub_sub_world.s"
 .PHONY : help
 
 
