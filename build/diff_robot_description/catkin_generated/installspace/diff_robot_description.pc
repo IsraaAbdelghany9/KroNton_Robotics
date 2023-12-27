@@ -1,0 +1,8 @@
+prefix=/home/israa/KroNton_Robotics/install
+
+Name: diff_robot_description
+Description: Description of diff_robot_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

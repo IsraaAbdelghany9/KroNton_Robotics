@@ -19,9 +19,6 @@ void laserScanCallback(const sensor_msgs::LaserScan::ConstPtr& msg) {
     front_distance_pos_3 = msg->ranges[45];  // Distance in front_right of the robot
     front_distance_neg_3 = msg->ranges[315];  // Distance in front_left of the robot
 
-    // ROS_INFO("front_distance_pos_3 = %f , front_distance_neg_3 =%f , front_distance =%f",& msg->ranges[3] ,& front_distance_neg_3 ,& front_distance);
-    
-    //&& front_distance_pos_3 > 0.5 && front_distance_neg_3 > 0.5 
     i = 0;
 
     if ((front_distance > 1.5) && (front_distance_pos_3 > 0.3) && (front_distance_neg_3 > 0.3 )  )

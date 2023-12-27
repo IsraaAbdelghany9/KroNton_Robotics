@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(Ass_1)
+project(diff_robot_gazebo)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -104,7 +104,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES Ass_1
+#  LIBRARIES diff_robot_gazebo
 #  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
@@ -122,7 +122,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/Ass_1.cpp
+#   src/${PROJECT_NAME}/diff_robot_gazebo.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -133,8 +133,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(Publisher_Int32_node src/int_pub.cpp)
-add_executable(turtle_velocity_publisher src/turtle_vel.cpp)
+# add_executable(${PROJECT_NAME}_node src/diff_robot_gazebo_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -147,12 +146,9 @@ add_executable(turtle_velocity_publisher src/turtle_vel.cpp)
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(Publisher_Int32_node
-  ${catkin_LIBRARIES}
-)
-target_link_libraries(turtle_velocity_publisher
-  ${catkin_LIBRARIES}
-)
+# target_link_libraries(${PROJECT_NAME}_node
+#   ${catkin_LIBRARIES}
+# )
 
 #############
 ## Install ##
@@ -201,7 +197,7 @@ target_link_libraries(turtle_velocity_publisher
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_Ass_1.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_diff_robot_gazebo.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
