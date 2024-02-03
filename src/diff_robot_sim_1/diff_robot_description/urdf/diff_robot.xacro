@@ -39,6 +39,8 @@
                 <box size="0.4 0.2 0.1"/>
             </geometry>
         </collision>
+
+ 
     </link>
 
     <link name="left_wheel">
@@ -110,16 +112,16 @@
     <link name="front_caster">
         <inertial>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <mass value="0.1"/>
+            <mass value="1.0"/>
             <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
-        <visual name="front_caster_virsual">
+        <visual name="front_caster_visual">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
                 <sphere radius="0.0499"/>
             </geometry>
             <material name="">
-                <color rgba="1.0 0.0 0.0 1.0"/>
+                <color rgba="1.0 1.0 1.0 1.0"/>
                 <texture filename=""/>
             </material>
         </visual>
@@ -142,16 +144,16 @@
     <link name="back_caster">
         <inertial>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <mass value="0.1"/>
+            <mass value="1.0"/>
             <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
-        <visual name="back_caster_virsual">
+        <visual name="back_caster_visual">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
                 <sphere radius="0.0499"/>
             </geometry>
             <material name="">
-                <color rgba="1.0 0.0 0.0 1.0"/>
+                <color rgba="1.0 1.0 1.0 1.0"/>
                 <texture filename=""/>
             </material>
         </visual>
@@ -170,6 +172,7 @@
         <axis xyz="0.0 0.0 0.0"/>
         <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
     </joint>
-    
+        
 
 </robot>
+

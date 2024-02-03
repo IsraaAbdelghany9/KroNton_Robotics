@@ -1,32 +1,34 @@
 <?xml version="1.0"?>
 <launch>
+
+
 <!-- This is the launch file for the robot description -->
     <!-- send urdf to the param server  -->
     <!--<arg name="model" default="$(find diff_robot_description)/urdf/diff_robot.xacro"/>-->
-    <param name="robot_description" textfile="$(find diff_robot_description)/urdf/diff_robot.xacro"/>
-
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find diff_robot_description)/urdf/diff_robot.xacro"/>
     <!-- send robot states to tf -> send tf data -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn = "false" output = "screen"/>
 
 
-
     <!-- send fake joint values -->
     <!-- it is a node -->
-        <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
-            <!-- it is very important to use this gui to interface in rviz -->
-            <!--No difference has been shown by applying true to this the explanasion I found is:-->
-            <!--may not have a graphical user interface (GUI) implemented, regardless of the use_gui parameter value. -->
-            <param name="use_gui" value="false"/>     
-        </node>
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <!-- it is very important to use this gui to interface in rviz -->
+        <!--No difference has been shown by applying true to this the explanasion I found is:-->
+        <!--may not have a graphical user interface (GUI) implemented, regardless of the use_gui parameter value. -->
+        <param name="use_gui" value="true"/>  
+    </node>
 
     <!-- rviz -->
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find diff_robot_description)/config/robot_rviz_config.rviz" required="true" output="screen">
-    </node>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find diff_robot_description)/config/robot_rviz_config.rviz" required="true" output="screen"/>
+    
 
 </launch>
 
 <!-- difference between robot state publisher and joint state publisher :-->
 
     <!-- The robot state publisher package helps to publish the state 
-of the robot to tf . This package subscribes to joint states of the robot and publishes
- the 3D pose of each link using the kinematic representation from the URDF model -->
+    of the robot to tf . This package subscribes to joint states of the robot and publishes
+    the 3D pose of each link using the kinematic representation from the URDF model -->
+
+
