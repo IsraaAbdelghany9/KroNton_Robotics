@@ -135,3 +135,11 @@
 /home/israa/KroNton_Robotics/build/turtle_gazebo_sim_1/CMakeFiles/list_install_components.dir
 /home/israa/KroNton_Robotics/build/turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir
 /home/israa/KroNton_Robotics/build/turtle_gazebo_sim_1/CMakeFiles/install.dir
+/home/israa/KroNton_Robotics/build/my_robot_descirption_6/CMakeFiles/install/strip.dir
+/home/israa/KroNton_Robotics/build/my_robot_descirption_6/CMakeFiles/install/local.dir
+/home/israa/KroNton_Robotics/build/my_robot_descirption_6/CMakeFiles/install.dir
+/home/israa/KroNton_Robotics/build/my_robot_descirption_6/CMakeFiles/list_install_components.dir
+/home/israa/KroNton_Robotics/build/my_robot_descirption_6/CMakeFiles/rebuild_cache.dir
+/home/israa/KroNton_Robotics/build/my_robot_descirption_6/CMakeFiles/edit_cache.dir
+/home/israa/KroNton_Robotics/build/my_robot_descirption_6/CMakeFiles/test.dir
+/home/israa/KroNton_Robotics/build/my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir

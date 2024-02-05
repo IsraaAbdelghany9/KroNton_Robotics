@@ -1,2 +1,2 @@
-ass_1:custom_msg_pkg:diff_robot_sim_1/diff_robot_description:diff_robot_sim_1/diff_robot_gazebo:divider_pkg:pub_sub_int:topic_subscriber_pkg:turtle_gazebo_sim_1
+ass_1:custom_msg_pkg:diff_robot_sim_1/diff_robot_description:diff_robot_sim_1/diff_robot_gazebo:divider_pkg:my_robot_descirption_6:pub_sub_int:topic_subscriber_pkg:turtle_gazebo_sim_1
 -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCATKIN_DEVEL_PREFIX=/home/israa/KroNton_Robotics/devel -DCMAKE_INSTALL_PREFIX=/home/israa/KroNton_Robotics/install -G Unix Makefiles

@@ -139,6 +139,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/israa/KroNton_Robotics/build/pub_sub_int/cmake_install.cmake")
   include("/home/israa/KroNton_Robotics/build/topic_subscriber_pkg/cmake_install.cmake")
   include("/home/israa/KroNton_Robotics/build/turtle_gazebo_sim_1/cmake_install.cmake")
+  include("/home/israa/KroNton_Robotics/build/my_robot_descirption_6/cmake_install.cmake")
 
 endif()
 

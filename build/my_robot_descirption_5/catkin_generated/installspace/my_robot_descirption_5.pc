@@ -1,0 +1,8 @@
+prefix=/home/israa/KroNton_Robotics/install
+
+Name: my_robot_descirption_5
+Description: Description of my_robot_descirption_5
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
