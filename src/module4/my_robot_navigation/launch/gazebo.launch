@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- Robot pose -->
+    <arg name="x" default="0"/>
+    <arg name="y" default="0"/> 
+    <arg name="z" default="0"/>
+    <arg name="roll" default="0"/>
+    <arg name="pitch" default="0"/>
+    <arg name="yaw" default="0"/>
+    
+    <!-- World File -->
+    <arg name="world_file" default="$(find my_robot_descirption_6)/world/home_1.world"/>
+    
+    <!-- Launch Gazebo World -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="use_sim_time" value="true"/> <!--  من غيره ممكن يعمل ايرور في اماكن تانيه لو بعمل سيميوليشن دا مهم لانه بيستخدم الوقت الحقيقي -->
+        <arg name="debug" value="false"/>
+        <arg name="gui" value="true" /> <!-- بيعمل انه يفتح الجازيبو ويعرض الروبوت لو مقفول جازيبو بيشتغل في الباك جراوند -->
+        <arg name="world_name" value="$(arg world_file)"/>
+    </include>
+
+    <!-- Spawn My Robot --> <!-- بيحط الروبوت بتاعي جوا جازيبو يعني بيعمل سباون للروبوت -->
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 
+        args="-urdf -param robot_description -model my_robot_descirption_6 
+              -x $(arg x) -y $(arg y) -z $(arg z)
+              -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
+
+</launch>

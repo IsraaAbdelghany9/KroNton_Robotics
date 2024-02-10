@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_robot_descirption_6">
+  
+  <xacro:include filename="$(find my_robot_descirption_6)/urdf/my_robot.gazebo"/>
+  
+  <!--dummy robot base-->
+  <link name="robot_footprint">
+  </link>
+
+  <joint name="robot_footprint_joint" type="fixed">
+    <parent link="robot_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </joint>
+  
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000252209867107389 -0.00038555488684432 -0.000299158651990671"
+        rpy="0 0 0" />
+      <mass
+        value="0.957708699167893" />
+      <inertia
+        ixx="0.00141349612035954"
+        ixy="3.8205623738715E-14"
+        ixz="9.82017698792152E-12"
+        iyy="0.00215520955933847"
+        iyz="1.33153730568242E-14"
+        izz="0.00349743945422456" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot_descirption_6/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1.0 0.753 0.796 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot_descirption_6/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right_front_wheel_link">
+    <inertial>
+      <origin
+        xyz="1.69194095939185E-06 0.011 -2.39602456181612E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.205279642528535" />
+      <inertia
+        ixx="8.76570959286214E-05"
+        ixy="-2.20206728368428E-21"
+        ixz="7.9106463718466E-08"
+        iyy="0.000159146108361823"
+        iyz="1.5770111496766E-20"
+        izz="8.80482369305033E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot_descirption_6/meshes/right_front_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot_descirption_6/meshes/right_front_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_front_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.080119 -0.095001 0.00037775"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_front_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_front_wheel_link">
+    <inertial>
+      <origin
+        xyz="-2.73293422589638E-06 -0.011 -1.06520816169076E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.205279642528536" />
+      <inertia
+        ixx="8.77033194033012E-05"
+        ixy="-3.08687580188302E-21"
+        ixz="1.4900039995678E-07"
+        iyy="0.000159146108361823"
+        iyz="2.63664442466982E-20"
+        izz="8.80020134558235E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot_descirption_6/meshes/left_front_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot_descirption_6/meshes/left_front_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_front_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.080187 0.094999 0.00035735"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_front_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_back_wheel_link">
+    <inertial>
+      <origin
+        xyz="6.61278274194377E-07 0.011 2.85767544605867E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.205279642528535" />
+      <inertia
+        ixx="8.79534475613262E-05"
+        ixy="9.74180014547912E-20"
+        ixz="1.8533433821266E-07"
+        iyy="0.000159146108361823"
+        iyz="-3.65660736267734E-20"
+        izz="8.77518852977985E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot_descirption_6/meshes/right_back_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot_descirption_6/meshes/right_back_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_back_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.079865 -0.095001 0.00029721"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_back_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="leftt_back_wheel_link">
+    <inertial>
+      <origin
+        xyz="-2.73293422597964E-06 -0.011 -1.06520816169423E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.205279642528536" />
+      <inertia
+        ixx="8.77033194033012E-05"
+        ixy="-1.32673107163055E-21"
+        ixz="1.49000399956759E-07"
+        iyy="0.000159146108361823"
+        iyz="2.27134867156513E-20"
+        izz="8.80020134558235E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot_descirption_6/meshes/leftt_back_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://my_robot_descirption_6/meshes/leftt_back_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leftt_back_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.079813 0.094999 0.00035735"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="leftt_back_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+    <link name="lidar_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.1"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="lidar_link_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://my_robot_descirption_6/meshes/lidar_link.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.5373 0.8118 0.9412 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.1 0.1 0.1"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="lidar_joint" type="fixed">
+        <origin xyz="-0.03 0.0 0.045" rpy="1.5708 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="lidar_link"/>
+    </joint>
+
+    <link name="laser_data_link">
+        
+    </link>
+
+    <joint name="laser_data_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 -1.5708 -1.5708"/>
+        <parent link="lidar_link"/>
+        <child link="laser_data_link"/>
+    </joint>
+
+
+</robot>

@@ -549,6 +549,18 @@ my_robot_description_BINARY_DIR:STATIC=/home/israa/KroNton_Robotics/build/my_rob
 my_robot_description_SOURCE_DIR:STATIC=/home/israa/KroNton_Robotics/src/my_robot_description
 
 //Value Computed by CMake
+my_robot_navigation_BINARY_DIR:STATIC=/home/israa/KroNton_Robotics/build/module4/my_robot_navigation
+
+//Value Computed by CMake
+my_robot_navigation_SOURCE_DIR:STATIC=/home/israa/KroNton_Robotics/src/module4/my_robot_navigation
+
+//Value Computed by CMake
+my_robot_slam_BINARY_DIR:STATIC=/home/israa/KroNton_Robotics/build/module3/my_robot_slam
+
+//Value Computed by CMake
+my_robot_slam_SOURCE_DIR:STATIC=/home/israa/KroNton_Robotics/src/module3/my_robot_slam
+
+//Value Computed by CMake
 pub_sub_int_BINARY_DIR:STATIC=/home/israa/KroNton_Robotics/build/pub_sub_int
 
 //Value Computed by CMake
@@ -744,7 +756,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=13
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=15
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

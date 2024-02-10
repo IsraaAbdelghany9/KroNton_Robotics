@@ -1,0 +1,18 @@
+obstacle_range: 2.5
+raytrace_range: 3.0
+# robot_radius: 0.23
+footprint: [[-0.2, -0.15], [-0.2, 0.15], [0.2, 0.15], [0.2, -0.15]]
+inflation_radius: 1.55 #distance from the robot to start inflating the obstacles (between the robot and the obstacle)
+transform_tolerance: 0.5
+
+# sensors used to avoid obstacles
+observation_sources: scan # هعتمد علي الليزر بس عشان ابعد عن المعيقات بس لو في حاجاات كمان ممكن اضيفها ك لير تانيه
+scan:
+  data_type: LaserScan
+  topic: scan
+  marking: true
+  clearing: true
+
+
+# this is for both the costmap global and local
+map_type: costmap

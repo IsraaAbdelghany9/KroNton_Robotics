@@ -114,7 +114,7 @@
     <gazebo reference="laser_data_link">
         <sensor type="ray" name="rplidar">
             <pose>0 0 0 0 0 0</pose>
-            <visualize>true</visualize>
+            <visualize>false</visualize>
             <update_rate>10</update_rate>
             <ray>
                 <scan>

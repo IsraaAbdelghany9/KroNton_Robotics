@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- World File -->
+    <arg name="world_file" default="$(find my_robot_descirption_6)/world/home_1.world"/>
+
+</launch>

@@ -1,0 +1,11 @@
+global_costmap:
+  global_frame: map #because it is the global costmap and it is based on the map
+  robot_base_frame: robot_footprint
+  #if the robot is moving fast, you can increase the update frequency but it will use more power
+  update_frequency: 5.0 #before: 5.0 #Hz #how often to update the map   
+  publish_frequency: 0.5 #before 0.5
+  static_map: true
+  transform_tolerance: 0.5
+  # بياثروا اد ايه هيبعد عن المعيقات للحركة
+  cost_scaling_factor: 10.0
+  inflation_radius: 0.55

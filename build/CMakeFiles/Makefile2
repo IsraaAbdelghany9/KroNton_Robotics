@@ -54,11 +54,13 @@ CMAKE_BINARY_DIR = /home/israa/KroNton_Robotics/build
 
 # The main recursive "all" target.
 all: gtest/all
+all: module3/my_robot_slam/all
 all: ass_1/all
 all: custom_msg_pkg/all
 all: diff_robot_sim_1/diff_robot_description/all
 all: diff_robot_sim_1/diff_robot_gazebo/all
 all: divider_pkg/all
+all: module4/my_robot_navigation/all
 all: pub_sub_int/all
 all: topic_subscriber_pkg/all
 all: turtle_gazebo_sim_1/all
@@ -68,11 +70,13 @@ all: my_robot_descirption_6/all
 
 # The main recursive "preinstall" target.
 preinstall: gtest/preinstall
+preinstall: module3/my_robot_slam/preinstall
 preinstall: ass_1/preinstall
 preinstall: custom_msg_pkg/preinstall
 preinstall: diff_robot_sim_1/diff_robot_description/preinstall
 preinstall: diff_robot_sim_1/diff_robot_gazebo/preinstall
 preinstall: divider_pkg/preinstall
+preinstall: module4/my_robot_navigation/preinstall
 preinstall: pub_sub_int/preinstall
 preinstall: topic_subscriber_pkg/preinstall
 preinstall: turtle_gazebo_sim_1/preinstall
@@ -87,11 +91,13 @@ clean: CMakeFiles/clean_test_results.dir/clean
 clean: CMakeFiles/tests.dir/clean
 clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
+clean: module3/my_robot_slam/clean
 clean: ass_1/clean
 clean: custom_msg_pkg/clean
 clean: diff_robot_sim_1/diff_robot_description/clean
 clean: diff_robot_sim_1/diff_robot_gazebo/clean
 clean: divider_pkg/clean
+clean: module4/my_robot_navigation/clean
 clean: pub_sub_int/clean
 clean: topic_subscriber_pkg/clean
 clean: turtle_gazebo_sim_1/clean
@@ -279,6 +285,42 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 .PHONY : gtest/googletest/clean
 
 #=============================================================================
+# Directory level rules for directory module3/my_robot_slam
+
+# Recursive "all" directory target.
+module3/my_robot_slam/all:
+
+.PHONY : module3/my_robot_slam/all
+
+# Recursive "preinstall" directory target.
+module3/my_robot_slam/preinstall:
+
+.PHONY : module3/my_robot_slam/preinstall
+
+# Recursive "clean" directory target.
+module3/my_robot_slam/clean: module3/my_robot_slam/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+.PHONY : module3/my_robot_slam/clean
+
+#=============================================================================
+# Directory level rules for directory module4/my_robot_navigation
+
+# Recursive "all" directory target.
+module4/my_robot_navigation/all:
+
+.PHONY : module4/my_robot_navigation/all
+
+# Recursive "preinstall" directory target.
+module4/my_robot_navigation/preinstall:
+
+.PHONY : module4/my_robot_navigation/preinstall
+
+# Recursive "clean" directory target.
+module4/my_robot_navigation/clean:
+
+.PHONY : module4/my_robot_navigation/clean
+
+#=============================================================================
 # Directory level rules for directory my_robot_descirption_6
 
 # Recursive "all" directory target.
@@ -292,7 +334,7 @@ my_robot_descirption_6/preinstall:
 .PHONY : my_robot_descirption_6/preinstall
 
 # Recursive "clean" directory target.
-my_robot_descirption_6/clean: my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir/clean
+my_robot_descirption_6/clean:
 
 .PHONY : my_robot_descirption_6/clean
 
@@ -606,6 +648,33 @@ gtest: gtest/googletest/CMakeFiles/gtest.dir/rule
 gtest/googletest/CMakeFiles/gtest.dir/clean:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/clean
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/clean
+
+#=============================================================================
+# Target rules for target module3/my_robot_slam/CMakeFiles/_catkin_empty_exported_target.dir
+
+# All Build rule for target.
+module3/my_robot_slam/CMakeFiles/_catkin_empty_exported_target.dir/all:
+	$(MAKE) -f module3/my_robot_slam/CMakeFiles/_catkin_empty_exported_target.dir/build.make module3/my_robot_slam/CMakeFiles/_catkin_empty_exported_target.dir/depend
+	$(MAKE) -f module3/my_robot_slam/CMakeFiles/_catkin_empty_exported_target.dir/build.make module3/my_robot_slam/CMakeFiles/_catkin_empty_exported_target.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/israa/KroNton_Robotics/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
+.PHONY : module3/my_robot_slam/CMakeFiles/_catkin_empty_exported_target.dir/all
+
+# Build rule for subdir invocation for target.
+module3/my_robot_slam/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/israa/KroNton_Robotics/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 module3/my_robot_slam/CMakeFiles/_catkin_empty_exported_target.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/israa/KroNton_Robotics/build/CMakeFiles 0
+.PHONY : module3/my_robot_slam/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+# Convenience name for target.
+_catkin_empty_exported_target: module3/my_robot_slam/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+.PHONY : _catkin_empty_exported_target
+
+# clean rule for target.
+module3/my_robot_slam/CMakeFiles/_catkin_empty_exported_target.dir/clean:
+	$(MAKE) -f module3/my_robot_slam/CMakeFiles/_catkin_empty_exported_target.dir/build.make module3/my_robot_slam/CMakeFiles/_catkin_empty_exported_target.dir/clean
+.PHONY : module3/my_robot_slam/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 #=============================================================================
 # Target rules for target ass_1/CMakeFiles/turtle_velocity_publisher.dir
@@ -1803,33 +1872,6 @@ geometry_msgs_generate_messages_lisp: turtle_gazebo_sim_1/CMakeFiles/geometry_ms
 turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean:
 	$(MAKE) -f turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 .PHONY : turtle_gazebo_sim_1/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
-
-#=============================================================================
-# Target rules for target my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir
-
-# All Build rule for target.
-my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir/all:
-	$(MAKE) -f my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir/build.make my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir/depend
-	$(MAKE) -f my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir/build.make my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/israa/KroNton_Robotics/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
-.PHONY : my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir/all
-
-# Build rule for subdir invocation for target.
-my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/israa/KroNton_Robotics/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/israa/KroNton_Robotics/build/CMakeFiles 0
-.PHONY : my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-# Convenience name for target.
-_catkin_empty_exported_target: my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-.PHONY : _catkin_empty_exported_target
-
-# clean rule for target.
-my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	$(MAKE) -f my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir/build.make my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir/clean
-.PHONY : my_robot_descirption_6/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
