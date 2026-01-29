@@ -353,10 +353,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 35.728458404541016
+      Scale: 1070.4219970703125
       Target Frame: <Fixed Frame>
-      X: 0.03964003175497055
-      Y: 0.25269821286201477
+      X: -0.1722247302532196
+      Y: 0.39577165246009827
     Saved: ~
 Window Geometry:
   Displays:
@@ -377,4 +377,4 @@ Window Geometry:
     collapsed: true
   Width: 1299
   X: 67
-  Y: 178
+  Y: 141

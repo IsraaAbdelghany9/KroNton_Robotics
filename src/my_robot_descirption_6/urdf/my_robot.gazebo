@@ -151,18 +151,34 @@
 
     <gazebo reference="right_front_wheel_link">
         <material>Gazebo/Grey</material>
+        <kp value="10000000.0"/>
+        <kd value="1.0"/>
+        <mu1>100.9</mu1>
+        <mu2>100.9</mu2>
     </gazebo>
 
     <gazebo reference="left_front_wheel_link">
         <material>Gazebo/Grey</material>
+        <kp value="10000000.0"/>
+        <kd value="1.0"/>
+        <mu1>100.9</mu1>
+        <mu2>100.9</mu2>
     </gazebo>
 
     <gazebo reference="right_back_wheel_link">
         <material>Gazebo/Grey</material>
+        <kp value="10000000.0"/>
+        <kd value="1.0"/>
+        <mu1>100.9</mu1>
+        <mu2>100.9</mu2>
     </gazebo>
 
     <gazebo reference="leftt_back_wheel_link">
         <material>Gazebo/Grey</material>
+        <kp value="10000000.0"/>
+        <kd value="1.0"/>
+        <mu1>100.9</mu1>
+        <mu2>100.9</mu2>
     </gazebo>
 
     <gazebo reference="lidar_link">
